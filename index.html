@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Refinite Construction | Project Works</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2 {
+      font-family: 'Cinzel', serif;
+    }
+
+    .navbar {
+      position: fixed;
+      width: 100%;
+      background-color: #202020;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .navbar h1 {
+      font-size: 22px;
+      color: white;
+    }
+
+    .navbar-left,
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #444;
+      border-radius: 4px;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .switch-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+    }
+
+    .switch-label {
+      font-size: 14px;
+    }
+
+    .theme-switch {
+      width: 36px;
+      height: 20px;
+      background-color: #555;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #clock {
+      color: #fff;
+      font-size: 14px;
+      margin-left: 90px;
+    }
+
+    header {
+      text-align: center;
+      padding: 120px 20px 40px;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    section p {
+      font-size: 1.1em;
+      color: #bbb;
+      line-height: 1.6em;
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      position: relative;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1s ease forwards;
+      position: relative;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 145px rgba(0, 255, 255, 0.3);
+    }
+
+    .gallery img:hover::after {
+      content: attr(alt) ' | ' attr(data-time);
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+
+    .alt-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .alt-section img {
+      flex: 1;
+      border-radius: 12px;
+      max-width: 500px;
+    }
+
+    .alt-section p {
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #111;
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Cinzel', serif;
+                                                
+        }
+        .img{
+           flex-basis: 50%;
+           display: grid;
+           grid-template-columns: repeat(3,4fr);
+           grid-auto-rows: 100px;
+           gap: 5px;
+        }
+        .box{
+           background-size: cover;
+           background-position: bottom;
+           color: aliceblue;
+           display: flex;
+           justify-content: center;
+           align-items: flex-end;
+           transition: 1s;
+        }
+        .box:hover{
+            background-color: gray;
+            background-position: right;
+            border-radius: 50%;
+            background-blend-mode: hard-light;
+            box-shadow: 0,0,0,2;
+
+        }
+        body{
+            background: linear-gradient( to right, black, rgb(8, 53, 83));
+            height: 100vh;
+            display: fl
+            justify-contentspace-evenly;
+            align-items: center;
+            gap: 5px;
+        }
+        .text-left{
+            color: aliceblue;
+            flex-basis: 30%;
+        }
+        p{
+            color: aliceblue;
+            margin-top: 30px;
+        }
+        h1{
+            font-size: 3rem;
+        
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .row-2{
+            grid-row: span 2;
+        }
+        .col-2{
+            grid-column: span 2 ;
+        }
+        .hy{
+            display: flex;
+            justify-content:flex-start;
+            color: aliceblue;
+        }
+        header{
+            color: aliceblue;
+            text-align: center;
+            background-color: #4fa5df33;
+            padding: 10px;
+        }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="hamburger"><i class="fas fa-bars"></i></span>
+      <h1>REFINITE CONSTRUCTION</h1>
+      <a href="#">Advertise</a>
+      <a href="#">Subscribe</a>
+      <a href="carrier.html">REGISTER</a>
+      <a href="login.html">SIGN OUT</a>
+    </div>
+    <div class="navbar-right">
+      <a href="/FirstsHome.html">Home</a>
+      <a href="/news.html">News</a>
+      <a href="/project.html">Works</a>
+      <a href="newhome.html">Events</a>
+      <a href="/vidoes.html">Videos</a>
+      <a href="contact.html">Contact Us</a>
+      <div class="switch-wrapper">
+        <span class="switch-label">Light Mode</span>
+        <div class="theme-switch" id="themeToggle"></div>
+      </div>
+      <div id="clock"></div>
+    </div>
+  </div>
+
+  <header>
+    <h1>Our Project Works</h1>
+    <p style="font-size: x-large;">Crafting excellence in every brick and beam</p>
+  </header>
+
+  <section>
+    <h2>What We Build</h2>
+    <p>From residential marvels to commercial landmarks, our portfolio showcases the strength of vision and execution. Explore our finest works that blend innovation, sustainability, and design.</p>
+    <div class="gallery">
+      <img src="https://images7.alphacoders.com/341/341714.jpg" alt="Construction site" data-time="14:32:10">
+      <img src="https://wallpaperaccess.com/full/1700233.jpg" alt="Urban development" data-time="14:32:11">
+      <img src="https://images7.alphacoders.com/341/341475.jpg" alt="Team collaboration" data-time="14:32:12">
+      <img src="https://wallpaperaccess.com/full/1126755.jpg" alt="Modern residential area" data-time="14:32:13">
+      <img src="https://images5.alphacoders.com/343/thumb-1920-343021.jpg" alt="House under construction" data-time="14:32:14">
+      <img src="https://www.constructionweekonline.com/cloud/2021/07/07/FkMXHVGf-30-Freyssinet-Saudi-Arabia-1200x750.jpg" alt="Framing work" data-time="14:32:15">
+    </div>
+  </section>
+
+
+  <section>
+  <h2>Residential Wonders</h2>
+  <div class="alt-section">
+    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="Luxury Home">
+    <p>We build homes that reflect dreams. From cozy cottages to sprawling villas, each project is a testament to craftsmanship.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Commercial Excellence</h2>
+  <div class="alt-section">
+    <p>Our commercial spaces are designed for productivity and style. We deliver modern architecture with sustainable solutions.</p>
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Office Building">
+    
+  </div>
+</section>
+
+<section>
+  <h2>Infrastructure Impact</h2>
+  <div class="alt-section">
+    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Bridge Construction">
+    <p>From bridges to highways, our infrastructure projects connect communities and drive progress.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Green Living Spaces</h2>
+  <div class="alt-section">
+     <p>We integrate nature into our designs, creating homes that breathe and inspire sustainable living.</p>
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Eco Home">
+   
+  </div>
+</section>
+
+<section>
+  <h2>Urban Renewal</h2>
+  <div class="alt-section">
+    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7" alt="Cityscape">
+    <p>We revitalize city spaces with smart planning and innovative design, turning old into new.</p>
+  </div>
+</section>
+
+
+ <section class="container">
+        <div class="text-left">
+        <h1 >REFINITE CONSTRUCTION</h1>
+        <p>In the mythical continent of Westeros, several powerful families fight for control of the Seven Kingdoms. As conflict erupts in the kingdoms of men, an ancient enemy rises once again to threaten them all. Meanwhile, the last heirs of a recently usurped dynasty plot to take back their homeland from across the Narrow Sea.</p>
+     </div>
+   
+    <div class="img">
+        <div class="box row-2" style="background-image: url(https://media.istockphoto.com/id/2155335325/photo/single-family-home-with-clouds.webp?a=1&b=1&s=612x612&w=0&k=20&c=tYw5_00k1WoYFtxUL5Zo2MqDqO36iLY8PLjlDBQ8lXs=);">hgi</div>
+        <div class="box col-2" style="background-image: url(https://media.istockphoto.com/id/2195673960/photo/a-green-front-door-detail-on-a-white-home.webp?a=1&b=1&s=612x612&w=0&k=20&c=rdssrKfMR6dQOLcSaURC3zgpT-f9sM8DluaDIV2Ywyg=);">edwe</div>
+        <div class="box" style="background-image: url(https://media.istockphoto.com/id/2162165500/photo/patriotic-neighborhood.webp?a=1&b=1&s=612x612&w=0&k=20&c=hlQcmFIjThu6f8CVCMIneVVJvY2NEtRjNZzpDFlIqI8=);">ded</div>
+        <div class="box row-2" style="background-image: url(https://media.istockphoto.com/id/2170236823/photo/new-suburban-houses.webp?a=1&b=1&s=612x612&w=0&k=20&c=YQFoNjBQJTvzyT0oH2Zr6pUvrzka1dQeU1A3lKjroZQ=);">dede</div>
+        <div class="box col-2" style="background-image: url(https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2V8ZW58MHx8MHx8fDA%3D);">eded</div>
+        <div class="box" style="background-image: url(https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2V8ZW58MHx8MHx8fDA%3D);">eded</div>
+        <div class="box col-2" style="background-image: url(https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG91c2V8ZW58MHx8MHx8fDA%3D);">eded</div>
+        
+    </section>
+    </div>
+
+
+   
+<footer style="background-color: #2c3e50; color: white; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+    
+   
+    <div style="flex: 1 1 250px; margin-bottom: 20px;">
+      <h3>About Company</h3>
+      <p>Welcome to Refinite Constructions Pvt. Ltd. (RC), a premier construction company established in 1986.</p>
+      <div style="margin-top: 10px; ">
+        <a href="#" style="margin-right: 10px; color: white; text-decoration: none;"><i class="fab fa-facebook "></i> Facebook</a><br>
+        <a href="#" style="margin-right: 10px; color: white; text-decoration: none;"><i class="fab fa-twitter"></i> Twitter</a><br>
+        <a href="#" style="margin-right: 10px; color: white; text-decoration: none;"><i class="fab fa-youtube"></i> Youtube</a><br>
+        <a href="#" style="margin-right: 10px; color: white; text-decoration: none;"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    
+   
+    <div style="flex: 1 1 150px; margin-bottom: 20px;">
+      <h3>Useful Links</h3>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">About</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">Careers</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">Projects</a></li>
+        <li><a href="#" style="color: white; text-decoration: none;">Contact Us</a></li>
+      </ul>
+    </div>
+    
+   
+    <div style="flex: 1 1 250px; margin-bottom: 20px;">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-phone-alt"></i> +91-9522210094<br>
+         <i class="fas fa-envelope"></i> info@ccplindia.co.in<br>
+         <i class="fas fa-map-marker-alt"></i> 203 – 204, Airen Heights, Scheme No. 54, A.B. Road,<br>Indore – 452010, Madhya Pradesh</p>
+    </div>
+
+   
+    <div style="flex: 1 1 250px;">
+      <h3>Newsletter Signup</h3>
+      <form>
+        <input type="email" placeholder="Your email" required style="padding: 10px; width: 80%; margin-bottom: 10px;">
+        <br>
+        <button type="submit" style="padding: 10px 20px; background-color: #e67e22; color: white; border: none; cursor: pointer;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 40px; color: #ccc;">
+    &copy; 2025 Refinite Constructions Pvt. Ltd. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+</body>
+</html>
